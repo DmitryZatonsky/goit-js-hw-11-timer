@@ -2,14 +2,18 @@ class CountdownTimer {
   constructor({ selector, targetDate }) {
     this.selector = selector;
     this.targetDate = targetDate;
+    this.container = document.querySelector(this.selector);
+    this.days = this.container.querySelector('[data-value="days"]');
+    this.hours = this.container.querySelector('[data-value="hours"]');
+    this.mins = this.container.querySelector('[data-value="mins"]');
+    this.secs = this.container.querySelector('[data-value="secs"]');
   }
 
   refs() {
-    const container = document.querySelector(this.selector);
-    const days = container.querySelector('[data-value="days"]');
-    const hours = container.querySelector('[data-value="hours"]');
-    const mins = container.querySelector('[data-value="mins"]');
-    const secs = container.querySelector('[data-value="secs"]');
+    const days = this.days;
+    const hours = this.hours;
+    const mins = this.mins;
+    const secs = this.secs;
     return { days, hours, mins, secs, };
   };
 
